@@ -1,34 +1,30 @@
-name: generate github pages to gh-pages branch
+name: Deploy Hugo Site to GitHub Pages
 
 on:
   push:
     branches:
-      - main ## Set a branch name to trigger deployment
+      - main  # 替换为你的默认分支名称
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v3
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          submodules: true  # 如果使用了 Git 子模块，请启用此选项
 
-      - name: Setup Hugo
+      - name: Set up Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
-          extended: true
+          hugo-version: '0.120.4'  # 替换为你需要的 Hugo 版本
+          extended: true           # 如果需要 Hugo Extended 版本，请启用
 
-      - name: Build
+      - name: Build Hugo site
         run: hugo --minify
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
-        # If you're changing the branch from main,
-        # also change the `main` in `refs/heads/main`
-        # below accordingly.
-        if: github.ref == 'refs/heads/main'
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # 使用默认的 GitHub Token
+          publish_dir: ./public                      # Hugo 默认生成的静态文件目录
