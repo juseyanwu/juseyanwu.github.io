@@ -1,7 +1,7 @@
 ---
 title: TS类相关知识
 date: 2025-02-12T00:28:34+08:00
-tags: []
+tags: [ts]
 series: []
 featured: true
 ---

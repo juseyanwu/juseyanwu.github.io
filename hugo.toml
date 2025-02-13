@@ -42,11 +42,6 @@ defaultContentLanguage = "zh"
   weight = 1
 
 [[menu.main]]
-  name = "归档"
-  url = "/archive/"
+  name = "分类"
+  url = "/tags/"
   weight = 2
-
-[[menu.main]]
-  name = "联系"
-  url = "/contact/"
-  weight = 3
