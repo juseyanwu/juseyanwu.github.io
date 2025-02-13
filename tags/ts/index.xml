@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ts on 陈子进</title><link>https://juseyanwu.github.io/tags/ts/</link><description>Recent content in ts on 陈子进 created by</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Wed, 12 Feb 2025 00:28:34 +0800</lastBuildDate><atom:link href="https://juseyanwu.github.io/tags/ts/index.xml" rel="self" type="application/rss+xml"/><item><title>TS类相关知识</title><link>https://juseyanwu.github.io/blog/typescript/</link><pubDate>Wed, 12 Feb 2025 00:28:34 +0800</pubDate><guid>https://juseyanwu.github.io/blog/typescript/</guid><description>&lt;p>TS&lt;/p>
+&lt;h2 id="类相关">类相关&lt;/h2>
+&lt;h3 id="override">override&lt;/h3>
+&lt;p>子类 要重写父类方法的话 加一个 &lt;strong>override&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="https://juseyanwu.github.io/images/image-20250206024431993.png" alt="image-20250206024431993">&lt;/p>
+&lt;p>这个好处在于假设拼错了单词 typescript会发现并且报错&lt;/p>
+&lt;h3 id="属性修饰符">属性修饰符&lt;/h3>
+&lt;h4 id="public">public&lt;/h4>
+&lt;p>可以被 类内部 子类 类外部访问&lt;/p>
+&lt;p>&lt;img src="https://juseyanwu.github.io/images/image-20250206024736719.png" alt="images-20250206024736719">&lt;/p>
+&lt;p>属性默认是pubilc&lt;/p>
+&lt;p>这种情况就是在类的内部可以访问属性&lt;/p>
+&lt;p>&lt;img src="https://juseyanwu.github.io/images/image-20250206024815652.png" alt="images-20250206024815652">&lt;/p>
+&lt;p>这种代表可以在子类被访问&lt;/p>
+&lt;p>&lt;img src="https://juseyanwu.github.io/images/image-20250206024917044.png" alt="images-20250206024917044">&lt;/p>
+&lt;p>这样代表 类的外部可以访问这些public属性&lt;/p>
+&lt;h3 id="属性的简写形式">属性的简写形式&lt;/h3>
+&lt;p>&lt;img src="https://juseyanwu.github.io/images/image-20250206025025128.png" alt="images-20250206025025128">&lt;/p>
+&lt;h3 id="protected修饰符">protected修饰符&lt;/h3>
+&lt;p>类的内部，子类可以访问，外部不可以访问&lt;/p>
+&lt;h3 id="private修饰符">private修饰符&lt;/h3>
+&lt;p>只能在类的内部使用&lt;/p>
+&lt;h3 id="readonly修饰符">readonly修饰符&lt;/h3>
+&lt;p>&lt;img src="https://juseyanwu.github.io/images/image-20250206025454049.png" alt="images-20250206025454049">&lt;/p>
+&lt;p>只读属性，不可以修改&lt;/p>
+&lt;h3 id="抽象类">抽象类&lt;/h3>
+&lt;p>抽象类 不能&lt;strong>实例化&lt;/strong>其意义是&lt;strong>可以被继承&lt;/strong>，抽象类里面可以有&lt;strong>普通方法&lt;/strong>，也可以有&lt;strong>抽象方法&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="https://juseyanwu.github.io/images/image-20250206030425580.png" alt="images-20250206030425580">&lt;/p>
+&lt;p>啥时候使用抽象类？&lt;/p>
+&lt;ul>
+&lt;li>定义通用接口： 为一组相关的类定义通用的行为时&lt;/li>
+&lt;li>提供基础实现：在抽象类中提供某些方法或为其提供基础实现，这样派生类就可以继承这些实现&lt;/li>
+&lt;li>确保关键实现： 如果子类继承抽象类后没有实现抽象方法，则会报错&lt;/li>
+&lt;/ul>
+&lt;h2 id="interface接口">interface（接口）&lt;/h2>
+&lt;h3 id="定义类的结构">定义类的结构&lt;/h3>
+&lt;p>&lt;img src="https://juseyanwu.github.io/images/image-20250206031224090.png" alt="images-20250206031224090">&lt;/p>
+&lt;p>表示这个类实现了这个接口（按照接口的规范来）&lt;/p>
+&lt;p>implements！！！&lt;/p>
+&lt;h3 id="定义对象的结构">定义对象的结构&lt;/h3>
+&lt;p>&lt;img src="https://juseyanwu.github.io/images/image-20250206031522226.png" alt="images-20250206031522226">&lt;/p>
+&lt;p>把接口当成一种类型了，直接 user**：**UserInterface&lt;/p>
+&lt;h3 id="定义函数的结构">定义函数的结构&lt;/h3>
+&lt;p>&lt;img src="https://juseyanwu.github.io/images/image-20250206031703480.png" alt="images-20250206031703480">&lt;/p>
+&lt;h3 id="接口之间是可以继承的">接口之间是可以继承的&lt;/h3>
+&lt;p>&lt;img src="https://juseyanwu.github.io/images/image-20250206031801122.png" alt="images-20250206031801122">&lt;/p>
+&lt;h3 id="接口的自动合并">接口的自动合并&lt;/h3>
+&lt;p>&lt;img src="https://juseyanwu.github.io/images/image-20250206031907096.png" alt="images-20250206031907096">&lt;/p>
+&lt;p>也叫可以重复定义接口&lt;/p>
+&lt;h3 id="何时使用接口">何时使用接口？&lt;/h3>
+&lt;ul>
+&lt;li>定义对象的格式 无脑冲&lt;/li>
+&lt;li>类的契约：规定类需要哪些属性和方法&lt;/li>
+&lt;li>自动合并：扩展第三方库的类型，在一些超大型项目中使用&lt;/li>
+&lt;/ul>
+&lt;h2 id="一些相似概念的区别">一些相似概念的区别&lt;/h2>
+&lt;h3 id="interface和type的区别">interface和type的区别&lt;/h3>
+&lt;ul>
+&lt;li>相同点： interface和type都可以用于&lt;strong>定义对象结构&lt;/strong>，两者在许多场景中都是可以互换的&lt;/li>
+&lt;li>不同点：
+&lt;ul>
+&lt;li>interface更专注定义&lt;strong>对象&lt;/strong>和&lt;strong>类&lt;/strong>的结构，支持&lt;strong>继承、合并&lt;/strong>&lt;/li>
+&lt;li>type可以定义&lt;strong>类型别名、联合类型、交叉类型、但不支持继承和自动合并&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://juseyanwu.github.io/images/image-20250206032452737.png" alt="images-20250206032452737">&lt;/p>
+&lt;p>这个就是type 定义 &lt;strong>类型别名&lt;/strong> 的例子&lt;/p>
+&lt;p>&lt;img src="https://juseyanwu.github.io/images/image-20250206032531008.png" alt="images-20250206032531008">&lt;/p>
+&lt;p>Type支持&lt;strong>联合类型&lt;/strong> 和 &lt;strong>交叉类型&lt;/strong>&lt;/p>
+&lt;h3 id="interface和抽象类的区别">interface和抽象类的区别&lt;/h3>
+&lt;ul>
+&lt;li>相同点： 都用于定义一个类的格式&lt;/li>
+&lt;li>不同点：
+&lt;ul>
+&lt;li>接口：只能描述结构，不能有任何的代码实现，一个类可以实现多个接口&lt;/li>
+&lt;li>抽象类： 既可以包含抽象方法，也可以包含具体方法，一个类只能继承一个抽象类&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://juseyanwu.github.io/images/image-20250206033009028.png" alt="images-20250206033009028">&lt;/p>
+&lt;p>这是一个类能实现多个接口的例子&lt;/p>
+&lt;h2 id="泛型">泛型&lt;/h2>
+&lt;p>泛型允许我们在定义函数，类或接口时，使用类型参数来表示未指定的类型，这些参数在具体使用时，才被指定具体的类型，泛型能让同一段代码适用于多种类型，同时仍然保持类型的安全性&lt;/p>
+&lt;p>&lt;img src="https://juseyanwu.github.io/images/image-20250206033404133.png" alt="images-20250206033404133">&lt;/p>
+&lt;p>&lt;img src="https://juseyanwu.github.io/images/image-20250206033449756.png" alt="images-20250206033449756">&lt;/p>
+&lt;p>也可以多个&lt;/p>
+&lt;h3 id="泛型接口">泛型接口&lt;/h3>
+&lt;p>&lt;img src="https://juseyanwu.github.io/images/image-20250206033545753.png" alt="images-20250206033545753">&lt;/p>
+&lt;p>&lt;img src="https://juseyanwu.github.io/images/image-20250206033640780.png" alt="images-20250206033640780">&lt;/p>
+&lt;h3 id="类型声明文件">类型声明文件&lt;/h3>
+&lt;p>通常以.d.ts结尾&lt;/p>
+&lt;p>作用是为 &lt;strong>现有的js代码提供类型信息&lt;/strong>&lt;/p>
+&lt;p>使得ts在使用这些老的js库或者模块时进行&lt;strong>类型检查和提示&lt;/strong>&lt;/p></description></item></channel></rss>
